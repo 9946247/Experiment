@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载列表</title>
+    <style>
+        body {
+            background-color: rgb(40, 44, 52);
+            color: #fff;
+        }
+
+        .center-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+        }
+
+        .time {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            font-size: 2em;
+            color: #ccc;
+        }
+
+        footer {
+            color: #ccc;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 32px;
+            font-size: 1.2em;
+            font-weight: bold;
+            box-shadow: 0 4px 16px rgba(56, 249, 215, 0.2);
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-decoration: none;
+            transition: transform 0.2s;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.08);
+            background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-box" style="height:auto;align-items:center;justify-content:flex-start;margin-top:20px;">
+        <div class="time" id="currentTime" style="font-size:2em;margin-bottom:10px;text-align:center;"></div>
+        <h1 style="text-align:center;margin-top:10px;">这是一个实验页面，祝你天天开心！</h1>
+        <!-- 下载按钮区域，每行三个，共三行 -->
+        <div style="width:100%;margin-top:30px;">
+            <div style="display:flex;justify-content:center;gap:24px;margin-bottom:10px;">
+                <a class="download-btn" href="https://github.com/9946247/Experiment/raw/DownLoadList/心似烟火绿幕素材.mp4"
+                    download>心似烟火绿幕素材</a>
+                <a class="download-btn" href="" download>示例文件2</a>
+                <a class="download-btn" href="" download>示例文件3</a>
+            </div>
+            <div style="display:flex;justify-content:center;gap:24px;margin-bottom:10px;">
+                <a class="download-btn" href="" download>示例文件4</a>
+                <a class="download-btn" href="" download>示例文件5</a>
+                <a class="download-btn" href="" download>示例文件6</a>
+            </div>
+            <div style="display:flex;justify-content:center;gap:24px;">
+                <a class="download-btn" href="" download>示例文件7</a>
+                <a class="download-btn" href="" download>示例文件8</a>
+                <a class="download-btn" href="" download>示例文件9</a>
+            </div>
+        </div>
+    </div>
+    <div id="wish" style="text-align:center;font-size:1.5em;color:#ff8a00;margin-top:20px;"></div>
+    <script>
+        // 显示当前时间（年月日时分秒）
+        function updateTime() {
+            const now = new Date();
+            const y = now.getFullYear();
+            const mon = String(now.getMonth() + 1).padStart(2, '0');
+            const d = String(now.getDate()).padStart(2, '0');
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('currentTime').textContent =
+                `${y}年${mon}月${d}日 ${h}时${m}分${s}秒`;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+
+</html>
