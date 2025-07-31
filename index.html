@@ -90,7 +90,22 @@
             document.getElementById('main-content').innerHTML = `
                 <div class="center-box" style="height:auto;align-items:center;justify-content:flex-start;margin-top:40px;">
                     <div class="time" id="currentTime" style="font-size:2em;margin-bottom:10px;text-align:center;"></div>
-                    
+                    <a id="downloadBtn" href="" download style="
+                        display:inline-block;
+                        background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+                        color: #fff;
+                        border: none;
+                        border-radius: 25px;
+                        padding: 12px 32px;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        box-shadow: 0 4px 16px rgba(56,249,215,0.2);
+                        cursor: pointer;
+                        margin-bottom: 20px;
+                        text-decoration: none;
+                        transition: transform 0.2s;
+                        margin-top: 10px;
+                    ">点击下载我的文件</a>
                     <!-- 跳转按钮区域 -->
                     <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; width: 100%;">
                         <button class="jump-btn" onclick="window.location.href=''">跳转一</button>
