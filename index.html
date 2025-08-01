@@ -1,198 +1,176 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>主页面</title>
     <style>
-        body {
-            background-color: rgb(40, 44, 52);
-            color: #fff;
-        }
+      body {
+        background-color: rgb(40, 44, 52);
+        color: #fff;
+      }
 
-        .center-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 60vh;
-        }
+      /* ===== 侧边栏样式 ===== */
+      nav {
+        width: 180px;
+        background: #23272f;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 40px;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+      }
+      .nav-btn {
+        width: 100%;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.1em;
+        padding: 16px 0;
+        cursor: pointer;
+        text-align: left;
+        padding-left: 32px;
+      }
 
-        .time {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
+      /* ===== 按钮样式 ===== */
+      .jump-btn {
+        background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%);
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 12px 28px;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 0 5px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(91, 134, 229, 0.15);
+        transition: transform 0.2s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .jump-btn:hover {
+        transform: scale(1.08);
+        background: linear-gradient(90deg, #5b86e5 0%, #36d1c4 100%);
+      }
+      #downloadBtn {
+        display: inline-block;
+        background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 32px;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 4px 16px rgba(56, 249, 215, 0.2);
+        cursor: pointer;
+        margin-bottom: 20px;
+        text-decoration: none;
+        transition: transform 0.2s;
+        margin-top: 10px;
+      }
+      #downloadBtn:hover {
+        transform: scale(1.08);
+        background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+      }
 
-        .timer {
-            font-size: 2em;
-            color: #ccc;
-        }
+      /* ===== 主内容区样式 ===== */
+      #main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
 
-        footer {
-            color: #ccc;
-        }
-
-        /* 侧边栏样式 */
-        nav {
-            width: 180px;
-            background: #23272f;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-top: 40px;
-            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .nav-btn {
-            width: 100%;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.1em;
-            padding: 16px 0;
-            cursor: pointer;
-            text-align: left;
-            padding-left: 32px;
-        }
-
-        /* 主内容区样式 */
-        #main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-        }
+      /* ===== 文字样式 ===== */
+      .center-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+      }
+      .time {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <div style="display: flex; min-height: 100vh;">
-        <!-- 侧边栏 -->
-        <nav
-            style="width: 180px; background: #23272f; color: #fff; display: flex; flex-direction: column; align-items: flex-start; padding-top: 40px; box-shadow: 2px 0 8px rgba(0,0,0,0.08);">
-            <button class="nav-btn" id="nav-doing"
-                style="width: 100%; background: none; border: none; color: #fff; font-size: 1.1em; padding: 16px 0; cursor: pointer; text-align: left; padding-left: 32px;">进行中</button>
-            <button class="nav-btn" id="nav-expired"
-                style="width: 100%; background: none; border: none; color: #fff; font-size: 1.1em; padding: 16px 0; cursor: pointer; text-align: left; padding-left: 32px;">已过期</button>
-        </nav>
-        <!-- 主内容区 -->
-        <div id="main-content"
-            style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
-            <!-- 这里内容会被js动态填充 -->
-        </div>
+  <body>
+    <div style="display: flex; min-height: 100vh">
+      <!-- ===== 侧边栏 ===== -->
+      <nav>
+        <button class="nav-btn" id="nav-doing">主页面</button>
+        <button class="nav-btn" id="nav-expired">已过期</button>
+      </nav>
+      <!-- ===== 主内容区 ===== -->
+      <div id="main-content">
+        <!-- 这里内容会被js动态填充 -->
+      </div>
     </div>
     <script>
+      // ===== 主页面内容 =====
+      function renderBirthdayPage() {
+        document.getElementById("main-content").innerHTML = `
+          <div class="center-box" style="height:auto;align-items:center;justify-content:flex-start;margin-top:40px;">
+            <div class="time" id="currentTime" style="font-size:2em;margin-bottom:10px;text-align:center;"></div> 
+            <h1 style="text-align:center;margin-top:10px;">这是一个实验页面，祝你天天开心！</h1>
+            <a id="downloadBtn"
+               href="https://tech-mcy.dpdns.org/DownLoadList.html">
+               点击前往下载页面
+            </a>
+            <!-- 跳转按钮区域 -->
+            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; width: 100%;">
+               <button class="jump-btn" onclick="window.open('https://store.steampowered.com/', '_blank')">Steam</button>
+               <button class="jump-btn" onclick="window.open('https://sudoku.com/zh', '_blank')">数独</button>
+              <!-- <button class="jump-btn" onclick="window.location.href=''">跳转三</button> -->
+            </div>
+          </div>
+          <div id="wish" style="text-align:center;font-size:1.5em;color:#ff8a00;margin-top:20px;"></div>
+        `;
 
-        function renderBirthdayPage() { 
-            document.getElementById('main-content').innerHTML = `
-                <div class="center-box" style="height:auto;align-items:center;justify-content:flex-start;margin-top:40px;">
-                    <div class="time" id="currentTime" style="font-size:2em;margin-bottom:10px;text-align:center;"></div> 
-                    <h1 style="text-align:center;margin-top:10px;">这是一个实验页面，祝你天天开心！</h1>
-                    <a id="downloadBtn"
-                       href="https://tech-mcy.dpdns.org/DownLoadList.html"
-                           style="
-      display:inline-block;
-      background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
-      color: #fff;
-      border: none;
-      border-radius: 25px;
-      padding: 12px 32px;
-      font-size: 1.2em;
-      font-weight: bold;
-      box-shadow: 0 4px 16px rgba(56,249,215,0.2);
-      cursor: pointer;
-      margin-bottom: 20px;
-      text-decoration: none;
-      transition: transform 0.2s;
-      margin-top: 10px;
-   ">
-   点击前往下载页面
-</a>
-                    <!-- 跳转按钮区域 -->
-                    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; width: 100%;">
-                        <button class="jump-btn" onclick="window.location.href='https://sudoku.com/zh'">数独</button>
-                      <!--   <button class="jump-btn" onclick="window.location.href=''">跳转二</button> -->
-                      <!--   <button class="jump-btn" onclick="window.location.href=''">跳转三</button> -->
-                    </div>
-                </div>
-                <div id="wish" style="text-align:center;font-size:1.5em;color:#ff8a00;margin-top:20px;"></div>
-            `;
-
-            // 跳转按钮样式
-            const style = document.createElement('style');
-            style.innerHTML = `
-                .jump-btn {
-                    background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%);
-                    color: #fff;
-                    border: none;
-                    border-radius: 20px;
-                    padding: 12px 28px;
-                    font-size: 1.1em;
-                    font-weight: bold;
-                    margin: 0 5px;
-                    cursor: pointer;
-                    box-shadow: 0 2px 8px rgba(91,134,229,0.15);
-                    transition: transform 0.2s;
-                }
-                .jump-btn:hover {
-                    transform: scale(1.08);
-                    background: linear-gradient(90deg, #5b86e5 0%, #36d1c4 100%);
-                }
-            `;
-            document.head.appendChild(style);
-
-            // 时间显示
-            function updateTime() {
-                const now = new Date();
-                const y = now.getFullYear();
-                const mon = String(now.getMonth() + 1).padStart(2, '0');
-                const d = String(now.getDate()).padStart(2, '0');
-                const h = String(now.getHours()).padStart(2, '0');
-                const m = String(now.getMinutes()).padStart(2, '0');
-                const s = String(now.getSeconds()).padStart(2, '0');
-                document.getElementById('currentTime').textContent =
-                    `${y}年${mon}月${d}日 ${h}时${m}分${s}秒`;
-            }
-            setInterval(updateTime, 1000);
-            updateTime();
-
-            const btn = document.getElementById('birthdayBtn');
-            const wishDiv = document.getElementById('wish');
-
-            updateButtonAndClickLogic();
-            setInterval(updateButtonAndClickLogic, 1000);
+        // ===== 时间显示 =====
+        function updateTime() {
+          const now = new Date();
+          const y = now.getFullYear();
+          const mon = String(now.getMonth() + 1).padStart(2, "0");
+          const d = String(now.getDate()).padStart(2, "0");
+          const h = String(now.getHours()).padStart(2, "0");
+          const m = String(now.getMinutes()).padStart(2, "0");
+          const s = String(now.getSeconds()).padStart(2, "0");
+          document.getElementById(
+            "currentTime"
+          ).textContent = `${y}年${mon}月${d}日 ${h}时${m}分${s}秒`;
         }
+        setInterval(updateTime, 1000);
+        updateTime();
+      }
 
-        // 已过期页面内容
-        function renderExpiredPage() {
-            document.getElementById('main-content').innerHTML = `
-                <div style="margin-top:60px;text-align:center;width:100%;">
-                    <h2 style="color:#ccc;">🎈 活动已过期</h2>
-                    <p style="color:#ff8a00;font-size:1.3em;">感谢你的关注，期待下次再见！</p>
-                    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; width: 100%;">
-                        <button class="jump-btn" onclick="window.location.href='https://tech-mcy.dpdns.org/25YearBirthday.html'">18岁生日</button>
-                        
-                    </div>
-                </div>
-            `;
-        }
-                        //<button class="jump-btn" onclick="window.location.href=''">跳转五</button>
-                        //<button class="jump-btn" onclick="window.location.href=''">跳转六</button>
-        
-        // 侧边栏按钮事件
-        document.getElementById('nav-doing').onclick = function () {
-            renderBirthdayPage();
-        };
-        document.getElementById('nav-expired').onclick = function () {
-            renderExpiredPage();
-        };
+      // ===== 已过期页面内容 =====
+      function renderExpiredPage() {
+        document.getElementById("main-content").innerHTML = `
+          <div style="margin-top:60px;text-align:center;width:100%;">
+            <h2 style="color:#ccc;">🎈 活动已过期</h2>
+            <p style="color:#ff8a00;font-size:1.3em;">感谢你的关注，期待下次再见！</p>
+            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; width: 100%;">
+              <button class="jump-btn" onclick="window.location.href='https://tech-mcy.dpdns.org/25YearBirthday.html'">生日</button>
+            </div>
+          </div>
+        `;
+      }
 
-        // 默认加载进行中页面
-        renderBirthdayPage();
+      // ===== 侧边栏按钮事件 =====
+      document.getElementById("nav-doing").onclick = function () {
+        window.location.href = "https://tech-mcy.dpdns.org/index.html";
+      };
+      document.getElementById("nav-expired").onclick = function () {
+        renderExpiredPage();
+      };
+
+      // ===== 默认加载进行中页面 =====
+      renderBirthdayPage();
     </script>
-</body>
-
+  </body>
 </html>
