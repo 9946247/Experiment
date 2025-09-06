@@ -9,30 +9,7 @@
         background-color: rgb(40, 44, 52);
         color: #fff;
       }
-<!--
-      /* ===== 侧边栏样式 ===== */
-      nav {
-        width: 180px;
-        background: #23272f;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-top: 40px;
-        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
-      }
-      .nav-btn {
-        width: 100%;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1.1em;
-        padding: 16px 0;
-        cursor: pointer;
-        text-align: left;
-        padding-left: 32px;
-      }
--->
+
       /* ===== 按钮样式 ===== */
       .jump-btn {
         background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%);
@@ -100,13 +77,7 @@
 
   <body>
     <div style="display: flex; min-height: 100vh">
-      <!--
-      <!-- ===== 侧边栏 ===== -->
-      <nav>
-        <button class="nav-btn" id="nav-doing">主页面</button>
-        <button class="nav-btn" id="nav-expired">已过期</button>
-      </nav>
-      -->
+     
       <!-- ===== 主内容区 ===== -->
        <div id="main-content">
         <!-- 这里内容会被js动态填充 -->
@@ -149,7 +120,7 @@
         setInterval(updateTime, 1000);
         updateTime();
       }
-<!--
+      
       // ===== 已过期页面内容 =====
       function renderExpiredPage() {
         document.getElementById("main-content").innerHTML = `
@@ -162,20 +133,13 @@
           </div>
         `;
       }
-
-      // ===== 侧边栏按钮事件 =====
-      document.getElementById("nav-doing").onclick = function () {
-        window.location.href = "https://tech-mcy.dpdns.org/index.html";
-      };
-      document.getElementById("nav-expired").onclick = function () {
-        renderExpiredPage();
-      };
--->
+      
       // ===== 默认加载进行中页面 =====
       renderBirthdayPage();
     </script>
   </body>
 </html>
+
 
 
 
