@@ -7,8 +7,9 @@
     <style>
       /* ===== 时间样式 ===== */
       .time {
-        font-size: 2.5em;
-        margin-bottom: 20px;
+        font-size: 2em;
+        margin-bottom: 10px;
+        margin-top: 12px;
         text-align: center;
       }
       /* ===== 文字样式 ===== */
@@ -27,12 +28,11 @@
       /* ===== 主页面按钮样式 ===== */
       .jump-btn {
         background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%);
-        color: #fff;
+        color: rgb(0, 0, 0);
         border: none;
         border-radius: 20px;
         padding: 12px 28px;
         font-size: 1.1em;
-        font-weight: bold;
         margin: 10px 5px 0 5px;
         cursor: pointer;
         box-shadow: 0 2px 8px rgba(91, 134, 229, 0.15);
@@ -47,25 +47,23 @@
       /* ===== 下载按钮样式 ===== */
       .download-btn {
         display: inline-block;
-        background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
-        color: #fff;
+        background: linear-gradient(
+          rgb(0, 170, 105) 0%,
+          rgb(56, 249, 215) 100%
+        );
+        color: rgb(0, 0, 0);
         border: none;
         border-radius: 25px;
         padding: 12px 32px;
         font-size: 1.2em;
-        font-weight: bold;
         box-shadow: 0 4px 16px rgba(56, 249, 215, 0.2);
         cursor: pointer;
-        margin-bottom: 20px;
         text-decoration: none;
         transition: transform 0.2s;
         margin-top: 10px;
         text-align: center;
       }
-      .download-btn:hover {
-        transform: scale(1.08);
-        background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
-      }
+
       body {
         background-color: rgb(40, 44, 52);
         color: #fff;
@@ -81,15 +79,22 @@
       <!-- ===== 文字内容 ===== -->
       <h1>这是一个实验页面，祝你天天开心！</h1>
 
-      <!-- ===== 主页面按钮 ===== -->
+      <!-- ===== 页面按钮 ===== -->
       <button
-        class="jump-btn"
-        onclick="window.location.href='https://tech-mcy.dpdns.org/index.html'"
+        class="download-btn"
+        onclick="window.location.href='https://tech-mcy.dpdns.org'"
       >
         主界面
       </button>
+      <button
+        class="download-btn"
+        style="margin-top: 25px"
+        onclick="window.location.href='https://tech-mcy.dpdns.org/Service.html'"
+      >
+        服务页面
+      </button>
 
-      <!-- ===== 九个下载按钮区域，每行三个，共三行 ===== -->
+      <!-- ===== 下载按钮 ===== -->
       <div style="width: 100%; margin-top: 30px">
         <div
           style="
@@ -100,13 +105,13 @@
           "
         >
           <a
-            class="download-btn"
+            class="jump-btn"
             href="https://github.com/9946247/Experiment/raw/refs/heads/main/心似烟火绿幕素材.mp4"
             download
             >心似烟火绿幕素材</a
           >
-          <a class="download-btn" href="" download>示例文件2</a>
-          <a class="download-btn" href="" download>示例文件3</a>
+          <a class="jump-btn" href="" download>示例文件2</a>
+          <a class="jump-btn" href="" download>示例文件3</a>
         </div>
         <div
           style="
@@ -116,14 +121,14 @@
             margin-bottom: 10px;
           "
         >
-          <a class="download-btn" href="" download>示例文件4</a>
-          <a class="download-btn" href="" download>示例文件5</a>
-          <a class="download-btn" href="" download>示例文件6</a>
+          <a class="jump-btn" href="" download>示例文件4</a>
+          <a class="jump-btn" href="" download>示例文件5</a>
+          <a class="jump-btn" href="" download>示例文件6</a>
         </div>
         <div style="display: flex; justify-content: center; gap: 24px">
-          <a class="download-btn" href="" download>示例文件7</a>
-          <a class="download-btn" href="" download>示例文件8</a>
-          <a class="download-btn" href="" download>示例文件9</a>
+          <a class="jump-btn" href="" download>示例文件7</a>
+          <a class="jump-btn" href="" download>示例文件8</a>
+          <a class="jump-btn" href="" download>示例文件9</a>
         </div>
       </div>
     </div>
